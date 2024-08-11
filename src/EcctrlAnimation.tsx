@@ -7,7 +7,7 @@ import React from "react";
 export function EcctrlAnimation(props: EcctrlAnimationProps) {
   // Change the character src to yours
   const group = useRef();
-  const { animations } = useGLTF(props.characterURL);
+  const { animations } = props.gltf;
   const { actions } = useAnimations(animations, group);
 
   /**
@@ -77,4 +77,5 @@ export type EcctrlAnimationProps = {
   characterURL: string;
   animationSet: AnimationSet;
   children: React.ReactNode;
+  gltf: any;
 };
